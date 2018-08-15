@@ -1,0 +1,76 @@
+<div class=" wrapper ">
+    <!-- Sidebar -->
+    <nav [ngClass]="status ? 'sidebar' : 'toggleSidebar'">
+        <div class="sidebar-header">
+            <h3 class="sideHeader">Dashboard Menu</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="">
+                
+<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-industry" aria-hidden="true"></i> Dashboard</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a >Sub Reporting Timelines</a>
+                    </li>
+                    <li>
+                        <a>Analytics Monitoring</a>
+                    </li>
+                    <li>
+                        <a >Time Phase Graphs</a>
+                    </li>
+                    <li>
+                        <a>Untitled Report</a>
+                    </li>
+                    <li>
+                        <a >Reporting Datatable</a>
+                    </li>
+                </ul>
+            </li>
+             <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-flag"></i> Analytics</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a >Page 1</a>
+                    </li>
+                    <li>
+                        <a>Page 2</a>
+                    </li>
+                    <li>
+                        <a>Page 3</a>
+                    </li>
+                </ul>
+            </li>
+         
+            <li>
+             <a href="#reportsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-bookmark"></i> Reports</a>
+                <ul class="collapse list-unstyled" id="reportsSubmenu">
+                    <li>
+                        <a >Page 1</a>
+                    </li>
+                    <li>
+                        <a>Page 2</a>
+                    </li>
+                    <li>
+                        <a>Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a><i class="fas fa-key"></i> Timelines</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+    <nav class=" ">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="toggleSidebar()"  >
+                <i class="fas fa-align-left"></i>
+            </button>
+
+        </div>
+    </nav>
+</div>
+
+</div>
