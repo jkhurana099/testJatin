@@ -17,6 +17,7 @@ ul li{
 .topnav {
   overflow: hidden;
   background-color: #ffffff;
+    min-width: 520px;
 }
 .alignHeader{
     float: right;
