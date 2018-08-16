@@ -16,13 +16,19 @@ import FusionCharts from "fusioncharts/core";
 import Pie3d from "fusioncharts/viz/pie3d";
 // Load fusion theme
 import FusionTheme from "fusioncharts/themes/es/fusioncharts.theme.fusion";
+import { TimelinesComponent } from './timelines/timelines.component';
+import { ServerMonitoringComponent } from './server-monitoring/server-monitoring.component';
+import { AnalyticsReportingComponent } from './analytics-reporting/analytics-reporting.component';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Pie3d, FusionTheme);
 
 const routes: Routes = [
   { path: '',  redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'sMonitoring', component: ServerMonitoringComponent },
+  { path: 'timelines', component: TimelinesComponent },
+   { path: 'analyticsReport', component: AnalyticsReportingComponent }
 ];
 
 
@@ -32,7 +38,10 @@ const routes: Routes = [
     SidebarComponent,
     NavigationComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    ServerMonitoringComponent,
+    TimelinesComponent,
+    AnalyticsReportingComponent
   ],
   imports: [
     BrowserModule,
