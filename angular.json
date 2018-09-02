@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CIOApp": {
+    "heapMap": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CIOApp",
+            "outputPath": "dist/heapMap",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,11 +23,16 @@
               "src/assets"
             ],
             "styles": [
-            "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "node_modules/font-awesome/css/font-awesome.css",
-              "src/styles.css"
+              "src/styles.css",
+                 "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
+                "node_modules/bootstrap/dist/css/bootstrap-grid.css",
+                "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+                  "node_modules/jquery/dist/jquery.min.js",
+          "node_modules/popper.js/dist/umd/popper.min.js",
+          "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -52,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CIOApp:build"
+            "browserTarget": "heapMap:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CIOApp:build:production"
+              "browserTarget": "heapMap:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CIOApp:build"
+            "browserTarget": "heapMap:build"
           }
         },
         "test": {
@@ -97,7 +102,7 @@
         }
       }
     },
-    "CIOApp-e2e": {
+    "heapMap-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -105,11 +110,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "CIOApp:serve"
+            "devServerTarget": "heapMap:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "CIOApp:serve:production"
+              "devServerTarget": "heapMap:serve:production"
             }
           }
         },
@@ -125,5 +130,5 @@
       }
     }
   },
-  "defaultProject": "CIOApp"
+  "defaultProject": "heapMap"
 }

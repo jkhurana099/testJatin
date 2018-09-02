@@ -1,11 +1,89 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<fusioncharts 
+    width="600"
+    height="350"
+    type="heatmap"
+    dataFormat="JSON"
+   
+    [dataSource]="dataSource"
+></fusioncharts>
 
-
-<app-header></app-header>
-<app-navigation></app-navigation>
-
-<div class="">
-<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <app-sidebar class="paddingLeft col-xs-12 col-sm-4 col-md-4 col-lg-3"></app-sidebar>
-    <router-outlet  ></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+<button type="button" class="btn btn-success" (click)="addData()">Add</button>
 </div>
+<div class="col-sm-2">
+<button type="button" class="btn btn-success" (click)="deleteData()">Delete</button>
+</div>
+<div class="col-sm-2">
+<button type="button" class="btn btn-success" (click)="editData()">Edit</button>
+</div>
+</div>
+
+<div *ngIf="deleteUser" class="delete">
+<div class="row" >
+    <div class="col-sm-5">
+<label>Which model you want to delete?  </label>
+<input type="text" value="" [(ngModel)]="modelName" class="mar-l-10"/>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-2">
+<button type="button" (click)="submitForDeletion()" class="btn btn-success">Submit</button>
+</div>
+</div>
+</div>
+
+
+<form *ngIf="editUser" [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="delete">
+    <div class="row">
+    <div class="form-group col-sm-3">
+  <label>
+    Enter Model Name:
+    <input type="text" class="form-control" formControlName="modelName">
+  </label>
+</div>
+
+<div class="form-group col-sm-3">
+  <label>
+    Enter value for processor
+    <input type="text" class="form-control" formControlName="processor">
+  </label>
+</div>
+
+<div class="form-group col-sm-3">
+  <label>
+    Enter value for screen
+    <input type="text" class="form-control" formControlName="screen">
+  </label>
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-sm-3">
+  <label>
+    Enter value for price
+    <input type="text" class="form-control" formControlName="price">
+  </label>
+</div>
+<div class="form-group col-sm-3">
+
+  <label>
+    Enter value for battery
+    <input type="text" class="form-control" formControlName="battery">
+  </label>
+</div>
+<div class="form-group col-sm-3">
+  <label>
+    Enter value for camera
+    <input type="text" class="form-control" formControlName="camera">
+  </label>
+</div>
+</div>
+<div class="row col-sm-3">
+  <button type="submit" class="btn btn-success" >Submit</button>
+</div>
+</form>
+
 </div>
