@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
  model:any;
  modelValue:any;
  profileForm: FormGroup;
-
+ edit:any;
 
  ngOnInit() {
  this.profileForm = this.fb.group({
@@ -143,7 +143,7 @@ export class AppComponent implements OnInit {
       "endlabel": "Good",
       "color": [{
         "code": "E24B1A",
-        "minvalue": "1",
+        "minvalue": "0",
         "maxvalue": "5",
         "label": "Bad"
       }, {
@@ -165,6 +165,7 @@ export class AppComponent implements OnInit {
 addData(){
   this.editUser=true;
   this.deleteUser=false;
+  this.edit=false;
   console.log(this.dataSource.dataset[0].data)
  
 }
@@ -185,6 +186,7 @@ onSubmit(){
 deleteData(){
   this.deleteUser=true;
   this.editUser=false;
+  this.edit=false;
 }
 
 submitForDeletion(){
@@ -197,11 +199,22 @@ submitForDeletion(){
 }
 
 editData(){
-
+this.edit=true;
+this.editUser=false;
+this.deleteUser=false;
 
 }
 
-
+onEditSubmit(){
+  console.log(this.profileForm.value);
+  this.dataSource.dataset[0].data=this.dataSource.dataset[0].data.filter(x=>x.rowid!=this.profileForm.value.modelName);
+  console.log(this.dataSource.dataset[0].data);
+   this.dataSource.dataset[0].data.push({"rowid":this.profileForm.value.modelName,"columnId":"Processor","value":this.profileForm.value.processor})
+    this.dataSource.dataset[0].data.push({"rowid":this.profileForm.value.modelName,"columnId":"Screen Size","value":this.profileForm.value.screen})
+    this.dataSource.dataset[0].data.push({"rowid":this.profileForm.value.modelName,"columnId":"Price","value":this.profileForm.value.price})
+  this.dataSource.dataset[0].data.push({"rowid":this.profileForm.value.modelName,"columnId":"Battery Backup","value":this.profileForm.value.battery})
+     this.dataSource.dataset[0].data.push({"rowid":this.profileForm.value.modelName,"columnId":"Camera","value":this.profileForm.value.camera})
+}
 
 
 
